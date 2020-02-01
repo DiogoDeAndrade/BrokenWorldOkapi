@@ -11,6 +11,7 @@ public class Enemy : MonoBehaviour
     protected SpriteRenderer    spriteRenderer;
     protected float             freezeTimer;
     protected HealthSystem      healthSystem;
+    protected Vector3           spawnPos;
 
     public bool invulnerable
     {
@@ -27,6 +28,7 @@ public class Enemy : MonoBehaviour
         healthSystem = GetComponent<HealthSystem>();
         healthSystem.isInvulnerable = true;
         freezeTimer = healthSystem.invulnerabilityTime;
+        spawnPos = transform.position;
 
         StartCoroutine(FadeInEnemy());
     }
@@ -75,17 +77,25 @@ public class Enemy : MonoBehaviour
 
     }
 
+    protected virtual void DealtDamage(PlayerController player)
+    {
+
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerController player = collision.GetComponent<PlayerController>();
         if (player)
         {
-            if (player.invulnerable) return;
+            if (player.isInvulnerable) return;
             if (invulnerable) return;
 
-            player.DealDamage(baseDamage);
+            if (player.DealDamage(baseDamage))
+            {
+                freezeTimer = freezeAfterDamage;
 
-            freezeTimer = freezeAfterDamage;
+                DealtDamage(player);
+            }
         }
     }
 }

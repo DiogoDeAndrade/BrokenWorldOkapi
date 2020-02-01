@@ -51,6 +51,8 @@ public class Backpack : MonoBehaviour
     
     void Update()
     {
+        if (playerController.isDead) return;
+
         if (currentType == ResourceType.None)
         {
             meterSprite.enabled = false;

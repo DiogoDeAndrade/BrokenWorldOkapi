@@ -53,7 +53,7 @@ public class Rupture : Resource
     {
         GameObject enemyPrefab = enemyPrefabs[Random.Range(0, enemyPrefabs.Length)];
 
-        GameObject newEnemy = Instantiate(enemyPrefab, transform.position - Vector3.forward * 0.1f, transform.rotation);
+        GameObject newEnemy = Instantiate(enemyPrefab, transform.position - Vector3.forward * Random.Range(0.1f, 0.2f), transform.rotation);
 
         enemies.Add(newEnemy);
     }

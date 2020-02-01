@@ -6,6 +6,7 @@ public class Phaser : Enemy
 {
     public float moveSpeed = 0.05f;
     public float idleTime = 2.0f;
+    public float maxDist = 100.0f;    
 
     Vector3 targetPos;
     float   waitTime;
@@ -33,14 +34,31 @@ public class Phaser : Enemy
 
                 // Find player
                 PlayerController pc = GameObject.FindObjectOfType<PlayerController>();
-                if (pc)
+                if ((pc) && (!pc.isInvulnerable) && (!pc.isDead))
                 {
                     targetPos = pc.GetFollowTarget().position;
+
+                    Vector3 toTarget = targetPos - transform.position;
+                    if (toTarget.sqrMagnitude > 0.01f)
+                    {
+                        targetPos = transform.position + toTarget.normalized * Mathf.Min(toTarget.magnitude, maxDist);
+                    }
+                }
+                else
+                {
+                    targetPos = spawnPos.xy() + Random.insideUnitCircle * 50.0f;
                 }
             }
         }
 
         Vector3 newPos = transform.position + (targetPos - transform.position) * moveSpeed * timeScaler.timeScale;
+        newPos.z = transform.position.z;
         transform.position = newPos;
     }
+
+    protected override void DealtDamage(PlayerController player)
+    {
+        targetPos = spawnPos.xy() + Random.insideUnitCircle * 50.0f;
+    }
 }
+
