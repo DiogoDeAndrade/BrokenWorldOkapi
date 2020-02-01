@@ -116,6 +116,7 @@ public class Backpack : MonoBehaviour
                             UseSlowOrFast();
                             break;
                         case ResourceType.Space:
+                            UseSlowOrFast();
                             break;
                         default:
                             break;
@@ -163,6 +164,8 @@ public class Backpack : MonoBehaviour
         isDumping = true;
 
         Resource res = GetResource();
+
+        if (res == null) return;
 
         // Check if it is a dump
         if ((res.canDump) &&

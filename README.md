@@ -14,6 +14,7 @@ Comming soon...
 
 * Code, some art, game design done by Diogo de Andrade
 * Character and background art by [IMakeGames]
+* Enemies by [Stephen Challener]
 
 ## Licenses
 
@@ -31,3 +32,4 @@ LPC art made available through the [GPLv3] and [CC-BY-SA 3.0.] licenses.
 [CC-BY-SA 3.0.]:http://creativecommons.org/licenses/by-sa/3.0/
 [CC BY-NC-SA 4.0]:https://creativecommons.org/licenses/by-nc-sa/4.0/
 [IMakeGames]:https://opengameart.org/users/imakegames
+[Stephen Challener]:https://opengameart.org/users/redshrike
