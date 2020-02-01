@@ -12,12 +12,21 @@ public class Enemy : MonoBehaviour
     protected float             freezeTimer;
     protected HealthSystem      healthSystem;
     protected Vector3           spawnPos;
+    protected Animator          anim;
 
-    public bool invulnerable
+    public bool isInvulnerable
     {
         get
         {
             return healthSystem.isInvulnerable;
+        }
+    }
+
+    public bool isDead
+    {
+        get
+        {
+            return healthSystem.isDead;
         }
     }
 
@@ -27,8 +36,11 @@ public class Enemy : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         healthSystem = GetComponent<HealthSystem>();
         healthSystem.isInvulnerable = true;
+        healthSystem.onHit += OnHit;
+        healthSystem.onDead += OnDead;
         freezeTimer = healthSystem.invulnerabilityTime;
         spawnPos = transform.position;
+        anim = GetComponent<Animator>();
 
         StartCoroutine(FadeInEnemy());
     }
@@ -57,16 +69,11 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        if (healthSystem.isInvulnerable)
-        { 
-            // Run effect
-        }
-
         if (freezeTimer > 0)
         {
             freezeTimer -= Time.deltaTime;
         }
-        else
+        else if (!healthSystem.isDead)
         {
             RunEnemy();
         }
@@ -87,15 +94,36 @@ public class Enemy : MonoBehaviour
         PlayerController player = collision.GetComponent<PlayerController>();
         if (player)
         {
+            if (isDead) return;
             if (player.isInvulnerable) return;
-            if (invulnerable) return;
+            if (isInvulnerable) return;
 
-            if (player.DealDamage(baseDamage))
-            {
+            HealthSystem hs = player.GetComponent<HealthSystem>();
+
+            if (hs.DealDamage(baseDamage))
+            { 
                 freezeTimer = freezeAfterDamage;
 
                 DealtDamage(player);
             }
         }
     }
+
+    private void OnDead()
+    {
+        anim.SetTrigger("Dead");
+    }
+
+    private void OnHit(float damage)
+    {
+        healthSystem.isInvulnerable = true;
+
+        anim.SetTrigger("Hit");
+    }
+
+    public void DestroySelf()
+    {
+        Destroy(gameObject);
+    }
+
 }

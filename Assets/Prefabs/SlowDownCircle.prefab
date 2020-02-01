@@ -4767,7 +4767,7 @@ GameObject:
   - component: {fileID: 5141393483038673455}
   - component: {fileID: 5141393483038673452}
   m_Layer: 12
-  m_Name: SlowDownArea2
+  m_Name: SlowDownCircle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4855,7 +4855,7 @@ MonoBehaviour:
   speedModifier: 0.2
   layersToAffect:
     serializedVersion: 2
-    m_Bits: 3072
+    m_Bits: 11264
 --- !u!58 &5141393483038673455
 CircleCollider2D:
   m_ObjectHideFlags: 0
