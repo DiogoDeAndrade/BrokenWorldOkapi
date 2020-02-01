@@ -9,6 +9,7 @@ public class Backpack : MonoBehaviour
     public Transform        absorbPoint;
     public LayerMask        absorbMask;
     public ResourceShower   absorbFX;
+    public float            timeBetweenParticles = 0.1f;
     [Header("Jetpack")]
     public float            jetpackDrainSpeed = 0.2f;
     public float            jetpackMaxSpeed = 40.0f;
@@ -30,6 +31,9 @@ public class Backpack : MonoBehaviour
     TimeScaler2d        timeScaler;
     float               gravityScaleNormal;
     float               timeOfJetpack;
+    float               timeOfLastParticle;
+    bool                isAbsorbing = false;
+    bool                isDumping = false;
 
     void Start()
     {
@@ -58,7 +62,8 @@ public class Backpack : MonoBehaviour
             meterTransform.localScale = new Vector3(1, ammount, 1);
         }
 
-        bool isAbsorbing = false;
+        isDumping = isAbsorbing = false;
+
         bool enableAbsorbFX = false;
 
         if (Input.GetButton(absorb))
@@ -69,45 +74,57 @@ public class Backpack : MonoBehaviour
 
                 Resource res = GetResource();
 
-                if ((res) && (ammount < 1.0f))
+                if ((res) &&
+                    (ammount < 1.0f) &&
+                    (res.type != ResourceType.None) &&
+                    ((res.resourceAmmount > 0.0f) || (res.isInfinite)))
                 {
                     if ((currentType == ResourceType.None) ||
-                        (currentType == res.type))
+                        (currentType == res.type) ||
+                        (ammount < 0.05f))
                     {
+                        if (currentType != res.type) ammount = 0;
+
                         ammount = Mathf.Clamp(ammount + Time.deltaTime * absorbTime, 0.0f, 1.0f);
                         currentType = res.type;
 
                         enableAbsorbFX = true;
+                        absorbFX.color = resourceColors[(int)res.type];
 
                         res.Drain(Time.deltaTime * absorbTime);
                     }
                 }
             }
         }
-
-        anim.SetBool("Absorb", isAbsorbing);
-        absorbFX.emit = enableAbsorbFX;
-        playerController.EnableMovement(!isAbsorbing);
-
-        if (Input.GetButton(use))
+        else
         {
-            if (ammount > 0)
+            if (Input.GetButton(use))
             {
-                switch (currentType)
+                if (ammount > 0)
                 {
-                    case ResourceType.None:
-                        break;
-                    case ResourceType.Fuel:
-                        UseJetpack();
-                        break;
-                    case ResourceType.Slow:
-                        break;
-                    case ResourceType.Speed:
-                        break;
-                    case ResourceType.Space:
-                        break;
-                    default:
-                        break;
+                    switch (currentType)
+                    {
+                        case ResourceType.None:
+                            break;
+                        case ResourceType.Fuel:
+                            UseJetpack();
+                            break;
+                        case ResourceType.Slow:
+                            UseSlowOrFast();
+                            break;
+                        case ResourceType.Speed:
+                            UseSlowOrFast();
+                            break;
+                        case ResourceType.Space:
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                else
+                {
+                    var emission = jetpackPS.emission;
+                    emission.enabled = false;
                 }
             }
             else
@@ -116,11 +133,10 @@ public class Backpack : MonoBehaviour
                 emission.enabled = false;
             }
         }
-        else
-        {
-            var emission = jetpackPS.emission;
-            emission.enabled = false;
-        }
+
+        anim.SetBool("Absorb", isAbsorbing || isDumping);
+        absorbFX.emit = enableAbsorbFX;
+        playerController.EnableMovement(!(isAbsorbing || isDumping));
 
         if ((timeScaler.time - timeOfJetpack) > 1)
         {
@@ -140,6 +156,33 @@ public class Backpack : MonoBehaviour
         timeOfJetpack = timeScaler.time;
 
         playerController.gravityJumpMultiplier = 1.0f;
+    }
+
+    void UseSlowOrFast()
+    {
+        isDumping = true;
+
+        Resource res = GetResource();
+
+        // Check if it is a dump
+        if ((res.canDump) &&
+            ((res.type == ResourceType.None) || (res.type == currentType)))
+        {
+            float tmp = Time.deltaTime * absorbTime;
+
+            ammount = Mathf.Clamp(ammount - tmp, 0.0f, 1.0f);
+
+            res.type = currentType;
+            res.Drain(-tmp);
+
+            if (Time.time - timeOfLastParticle > timeBetweenParticles)
+            {
+                absorbFX.SpawnParticle(resourceColors[(int)currentType]);
+                timeOfLastParticle = Time.time;
+            }
+
+            if (ammount <= 0.0f) currentType = ResourceType.None;
+        }
     }
 
     Resource GetResource()

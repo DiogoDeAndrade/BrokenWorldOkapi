@@ -47,7 +47,7 @@ public class ResourceShower : MonoBehaviour
             {
                 Vector2 pt = radius * Random.insideUnitCircle + transform.position.xy();
 
-                SpawnParticle(pt);
+                SpawnParticle(pt, targetPos.position, color);
             }
         }
 
@@ -74,13 +74,13 @@ public class ResourceShower : MonoBehaviour
         motes.RemoveAll((m) => m.trail == null);
     }
 
-    void SpawnParticle(Vector2 pos)
+    void SpawnParticle(Vector2 pos, Vector2 targetPos, Color c)
     {
         Vector3 p = pos;
         p.z = transform.position.z + zOffset;
 
         Gradient g = new Gradient();
-        g.FromColor(color);
+        g.FromColor(c);
 
         GameObject go = new GameObject();
         go.name = "ResourceMote";
@@ -89,17 +89,23 @@ public class ResourceShower : MonoBehaviour
         TrailRenderer tr = go.AddComponent<TrailRenderer>();
         tr.material = material;
         tr.time = trailTime;
-        tr.colorGradient = new Gradient();
         tr.colorGradient = g;
         tr.widthMultiplier = trailWidth;
 
         Mote mote = new Mote();
         mote.birthTime = Time.unscaledTime;
-        mote.targetPos = targetPos.position;
+        mote.targetPos = targetPos;
         mote.velocity = Random.insideUnitCircle.normalized * speed;
         mote.trail = tr;
 
         motes.Add(mote);
+    }
+
+    public void SpawnParticle(Color c)
+    {
+        Vector2 pt = radius * Random.insideUnitCircle + transform.position.xy();
+
+        SpawnParticle(targetPos.position, pt, c);
     }
 
     private void OnDrawGizmosSelected()

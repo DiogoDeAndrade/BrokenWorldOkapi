@@ -2,14 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TimeZone : MonoBehaviour
+public class TimeZone : Resource
 {
     public float        speedModifier = 1.0f;
     public LayerMask    layersToAffect;
 
-    void Start()
+    float           initialSpeed;
+    Color           color;
+    SpriteRenderer  spriteRenderer;
+
+    override public bool canDump
     {
-        
+        get
+        {
+            return (resourceAmmount < 1.0f);
+        }
+    }
+
+    void Awake()
+    {
+        type = (speedModifier > 1.0f) ? (ResourceType.Speed) : (ResourceType.Slow);
+        initialSpeed = speedModifier;
+        resourceAmmount = 1.0f;
+
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        color = spriteRenderer.color;
     }
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -36,5 +53,14 @@ public class TimeZone : MonoBehaviour
                 ts.SetScale(1.0f);
             }
         }
+    }
+
+    public override void Drain(float r)
+    {
+        resourceAmmount = Mathf.Clamp(resourceAmmount - r, 0.0f, 1.0f);
+
+        speedModifier = Mathf.Lerp(1.0f, initialSpeed, resourceAmmount);
+
+        spriteRenderer.color = Color.Lerp(color.ChangeAlpha(0), color, resourceAmmount);
     }
 }
