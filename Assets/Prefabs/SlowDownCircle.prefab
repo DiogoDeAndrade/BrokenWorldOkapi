@@ -4855,7 +4855,7 @@ MonoBehaviour:
   speedModifier: 0.2
   layersToAffect:
     serializedVersion: 2
-    m_Bits: 11264
+    m_Bits: 27648
 --- !u!58 &5141393483038673455
 CircleCollider2D:
   m_ObjectHideFlags: 0

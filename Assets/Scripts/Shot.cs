@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Shot : MonoBehaviour
 {
-    public float        damage = 0;
-    public float        speed = 0;
-    public Color        color = Color.white;
-    public LayerMask    treatAsSolidMask;
-    public GameObject   explosionPrefab;
+    public HealthSystem.Faction faction;
+    public float                damage = 0;
+    public float                speed = 0;
+    public Color                color = Color.white;
+    public LayerMask            treatAsSolidMask;
+    public GameObject           explosionPrefab;
 
     TimeScaler2d    timeScaler;
 
@@ -32,7 +33,14 @@ public class Shot : MonoBehaviour
             HealthSystem healthSystem = collision.GetComponent<HealthSystem>();
             if (healthSystem)
             {
-                healthSystem.DealDamage(damage);
+                if (healthSystem.faction != faction)
+                {
+                    healthSystem.DealDamage(damage);
+                }
+                else
+                {
+                    return;
+                }
             }
 
             Destroy(gameObject);

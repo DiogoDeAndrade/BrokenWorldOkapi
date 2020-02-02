@@ -15,6 +15,9 @@ Comming soon...
 * Code, some art, game design done by Diogo de Andrade
 * Character and background art by [IMakeGames]
 * Enemies by [Stephen Challener]
+* Planet by [FunwithPixels]
+* Font by [OmegaPC777]
+* Triumph sound by [FunWithSound]
 
 ## Licenses
 
@@ -33,3 +36,6 @@ LPC art made available through the [GPLv3] and [CC-BY-SA 3.0.] licenses.
 [CC BY-NC-SA 4.0]:https://creativecommons.org/licenses/by-nc-sa/4.0/
 [IMakeGames]:https://opengameart.org/users/imakegames
 [Stephen Challener]:https://opengameart.org/users/redshrike
+[OmegaPC777]:https://www.dafont.com/pt/omegapc777.d6598
+[FunwithPixels]:https://opengameart.org/users/funwithpixels
+[FunWithSound]:https://freesound.org/people/FunWithSound/

@@ -18,6 +18,10 @@ public class Backpack : MonoBehaviour
     public SpriteRenderer   meterSprite;
     public ParticleSystem   jetpackPS;
     public Color[]          resourceColors;
+    [Header("Sound")]
+    public AudioSource      jetpackSound;
+    public AudioSource      absorbSound;
+    public AudioSource      dumpSound;
 
     [Header("Controls")]
     public string           absorb = "Absorb";
@@ -128,17 +132,28 @@ public class Backpack : MonoBehaviour
                 {
                     var emission = jetpackPS.emission;
                     emission.enabled = false;
+
+                    jetpackSound.volume = jetpackSound.volume * 0.9f;
                 }
             }
             else
             {
                 var emission = jetpackPS.emission;
                 emission.enabled = false;
+
+                jetpackSound.volume = jetpackSound.volume * 0.9f;
             }
         }
 
         anim.SetBool("Absorb", isAbsorbing || isDumping);
         absorbFX.emit = enableAbsorbFX;
+
+        if (isAbsorbing) absorbSound.volume = 0.8f;
+        else absorbSound.volume = absorbSound.volume * 0.9f;
+
+        if (isDumping) dumpSound.volume = 0.8f;
+        else dumpSound.volume = dumpSound.volume * 0.9f;
+
         playerController.EnableMovement(!(isAbsorbing || isDumping));
 
         if ((timeScaler.time - timeOfJetpack) > 1)
@@ -153,6 +168,7 @@ public class Backpack : MonoBehaviour
 
         var emission = jetpackPS.emission;
         emission.enabled = true;
+        jetpackSound.volume = 0.8f;
 
         timeScaler.AddForce(new Vector2(0.0f, jetpackAcceleration), ForceMode2D.Force);
 

@@ -1,51 +1,47 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6019853755381021912
+--- !u!70 &7290068269566792313
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5865482526945485182}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 29.96, y: 28.5}
+  m_Direction: 0
+--- !u!1001 &1603148881600703315
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5141393482866422985, guid: 24badf168fc91994c902f7b4627c9d32,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5141393482866422985, guid: 24badf168fc91994c902f7b4627c9d32,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.047468763
-      objectReference: {fileID: 0}
-    - target: {fileID: 5141393482866422985, guid: 24badf168fc91994c902f7b4627c9d32,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5141393483038673453, guid: 24badf168fc91994c902f7b4627c9d32,
         type: 3}
       propertyPath: m_Name
-      value: SpeedUpArea1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5141393483038673453, guid: 24badf168fc91994c902f7b4627c9d32,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
+      value: SpeedUpCircle
       objectReference: {fileID: 0}
     - target: {fileID: 5141393483038673454, guid: 24badf168fc91994c902f7b4627c9d32,
         type: 3}
       propertyPath: speedModifier
-      value: 1.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5141393483038673872, guid: 24badf168fc91994c902f7b4627c9d32,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -31.9
+      value: -7.7
       objectReference: {fileID: 0}
     - target: {fileID: 5141393483038673872, guid: 24badf168fc91994c902f7b4627c9d32,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -66.4
+      value: -10.8
       objectReference: {fileID: 0}
     - target: {fileID: 5141393483038673872, guid: 24badf168fc91994c902f7b4627c9d32,
         type: 3}
@@ -92,6 +88,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5141393483038673872, guid: 24badf168fc91994c902f7b4627c9d32,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5141393483038673873, guid: 24badf168fc91994c902f7b4627c9d32,
         type: 3}
       propertyPath: m_Color.r
@@ -105,7 +106,14 @@ PrefabInstance:
     - target: {fileID: 5141393483038673873, guid: 24badf168fc91994c902f7b4627c9d32,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.44985133
+      value: 0.3731456
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5141393483038673455, guid: 24badf168fc91994c902f7b4627c9d32, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 24badf168fc91994c902f7b4627c9d32, type: 3}
+--- !u!1 &5865482526945485182 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5141393483038673453, guid: 24badf168fc91994c902f7b4627c9d32,
+    type: 3}
+  m_PrefabInstance: {fileID: 1603148881600703315}
+  m_PrefabAsset: {fileID: 0}

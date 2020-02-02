@@ -7,6 +7,8 @@ public class Rupture : Resource
 {
     public bool         spawnEnemies = false;
     [ShowIf("spawnEnemies")]
+    public int          initialEnemies = 0;
+    [ShowIf("spawnEnemies")]
     public int          maxEnemies = 1;
     [ShowIf("spawnEnemies")]
     public float        timeBetweenEnemies = 1.0f;
@@ -31,20 +33,28 @@ public class Rupture : Resource
         enemies = new List<GameObject>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         color = spriteRenderer.color;
+
+        for (int i = 0; i < initialEnemies; i++)
+        {
+            SpawnEnemy();
+        }
     }
 
     void Update()
     {
         enemies.RemoveAll((e) => e == null);
 
-        elapsedTime += Time.deltaTime;
-        if (elapsedTime > timeBetweenEnemies)
+        if (resourceAmmount > 0)
         {
-            elapsedTime -= timeBetweenEnemies;
-
             if (enemies.Count < maxEnemies)
             {
-                SpawnEnemy();
+                elapsedTime += Time.deltaTime;
+                if (elapsedTime > timeBetweenEnemies)
+                {
+                    elapsedTime -= timeBetweenEnemies;
+
+                    SpawnEnemy();
+                }
             }
         }
     }

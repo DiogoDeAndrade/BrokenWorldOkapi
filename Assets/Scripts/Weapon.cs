@@ -17,15 +17,17 @@ public class Weapon : MonoBehaviour
     [Header("Controls")]
     public string fire = "Fire2";
 
-    Animator        anim;
-    TimeScaler2d    timeScaler;
-    float           cooldownTimer = 0.0f;
-    bool            buttonsReleased = true;
+    Animator                anim;
+    TimeScaler2d            timeScaler;
+    float                   cooldownTimer = 0.0f;
+    bool                    buttonsReleased = true;
+    HealthSystem.Faction    faction;
 
     void Start()
     {
         anim = GetComponent<Animator>();
         timeScaler = GetComponent<TimeScaler2d>();
+        faction = GetComponent<HealthSystem>().faction;
     }
 
     // Update is called once per frame
@@ -44,13 +46,14 @@ public class Weapon : MonoBehaviour
 
                 if (muzzleFlash)
                 {
-                    Instantiate(muzzleFlash, shootPosition.position, shootPosition.rotation);
+                    Instantiate(muzzleFlash, shootPosition.position - Vector3.forward * 0.1f, shootPosition.rotation);
                 }
 
                 Shot shot = Instantiate(shotPrefab, shootPosition.position, shootPosition.rotation);
                 shot.damage = damage;
                 shot.speed = speed;
                 shot.color = color;
+                shot.faction = faction;
 
                 cooldownTimer = cooldown;
                 buttonsReleased = false;

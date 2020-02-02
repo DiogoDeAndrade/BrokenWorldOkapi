@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float baseDamage = 25.0f;
-    public float freezeAfterDamage = 2.0f;
+    public float        baseDamage = 25.0f;
+    public float        freezeAfterDamage = 2.0f;
+    public AudioSource  deathSound;
+    public AudioSource  hitSound;
 
     protected TimeScaler2d      timeScaler;
     protected SpriteRenderer    spriteRenderer;
@@ -112,6 +114,8 @@ public class Enemy : MonoBehaviour
     private void OnDead()
     {
         anim.SetTrigger("Dead");
+
+        if (deathSound) deathSound.Play();
     }
 
     private void OnHit(float damage)
@@ -119,11 +123,12 @@ public class Enemy : MonoBehaviour
         healthSystem.isInvulnerable = true;
 
         anim.SetTrigger("Hit");
+
+        if (hitSound) hitSound.Play();
     }
 
     public void DestroySelf()
     {
         Destroy(gameObject);
     }
-
 }
