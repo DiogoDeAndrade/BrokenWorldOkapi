@@ -8,6 +8,11 @@ I couldn't manage to finish the game, so I only have the 8 levels of tutorial th
 
 In the future I might fork this and expand it for Okapi Game Development Club and complete it (not much left to do, from a technical standpoint, just some art and game design stuff!).
 
+![Image](https://raw.githubusercontent.com/DiogoDeAndrade/BrokenWorld/master/Screenshots/title.png)
+![Image](https://raw.githubusercontent.com/DiogoDeAndrade/BrokenWorld/master/Screenshots/screen07.gif)
+![Image](https://raw.githubusercontent.com/DiogoDeAndrade/BrokenWorld/master/Screenshots/screen10.gif)
+![Image](https://raw.githubusercontent.com/DiogoDeAndrade/BrokenWorld/master/Screenshots/screen19.gif)
+
 ## Story
 
 The Universe is collapsing from anomalies in space-time...
