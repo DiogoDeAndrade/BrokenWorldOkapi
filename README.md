@@ -3,6 +3,7 @@
 This game is an improvement on the original [2020 Global Game Jam game].
 
 I've created a separate repo so that anyone that wants to check the original version can do so without any interference.
+Now I'm going to work on this as a submission to the Okapi Game Design Club this month (theme "Arcade"), since the game can work as such and I don't really have the time to build something else.
 
 The objective of this game is to repair a world plagued by time-space distortions.
 
