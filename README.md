@@ -1,12 +1,10 @@
 # Broken World
 
-This is a game done for the 2020 Global Game Jam, theme "Repair".
+This game is an improvement on the original [2020 Global Game Jam game].
+
+I've created a separate repo so that anyone that wants to check the original version can do so without any interference.
 
 The objective of this game is to repair a world plagued by time-space distortions.
-
-I couldn't manage to finish the game, so I only have the 8 levels of tutorial that kind of show everything the game eventually could have been...
-
-In the future I might fork this and expand it for Okapi Game Development Club and complete it (not much left to do, from a technical standpoint, just some art and game design stuff!).
 
 ![Image](https://github.com/DiogoDeAndrade/BrokenWorld/raw/master/Screenshots/title.png)
 ![Image](https://github.com/DiogoDeAndrade/BrokenWorld/raw/master/Screenshots/screen07.gif)
@@ -58,3 +56,4 @@ The rest are covered by their own licenses!
 [FunWithSound]:https://freesound.org/people/FunWithSound/
 [UnityCommon]:https://github.com/DiogoDeAndrade/UnityCommon
 [TimeScaler2d Component]:https://github.com/DiogoDeAndrade/UnityCommon/tree/master/TimeScaler
+[2020 Global Game Jam game]:https://github.com/DiogoDeAndrade/BrokenWorldGGJ2020
