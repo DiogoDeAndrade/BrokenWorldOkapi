@@ -16,6 +16,7 @@ MonoBehaviour:
   isInfinite: 0
   resourceAmmount: 1
   spawnEnemies: 1
+  initialEnemies: 0
   maxEnemies: 1
   timeBetweenEnemies: 1
   enemyPrefabs:
@@ -50,12 +51,12 @@ PrefabInstance:
     - target: {fileID: 5141393483038673872, guid: 24badf168fc91994c902f7b4627c9d32,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -34.3
+      value: 63.686127
       objectReference: {fileID: 0}
     - target: {fileID: 5141393483038673872, guid: 24badf168fc91994c902f7b4627c9d32,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -16.2
+      value: -26.356098
       objectReference: {fileID: 0}
     - target: {fileID: 5141393483038673872, guid: 24badf168fc91994c902f7b4627c9d32,
         type: 3}
@@ -104,26 +105,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5141393483038673873, guid: 24badf168fc91994c902f7b4627c9d32,
         type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6aa571951b0c58f428fc0a182f233549, type: 2}
+    - target: {fileID: 5141393483038673873, guid: 24badf168fc91994c902f7b4627c9d32,
+        type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5141393483038673873, guid: 24badf168fc91994c902f7b4627c9d32,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5141393483038673873, guid: 24badf168fc91994c902f7b4627c9d32,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5141393483038673873, guid: 24badf168fc91994c902f7b4627c9d32,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0.49803922
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5141393483038673454, guid: 24badf168fc91994c902f7b4627c9d32, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24badf168fc91994c902f7b4627c9d32, type: 3}
 --- !u!1 &4056509615905167152 stripped
 GameObject:

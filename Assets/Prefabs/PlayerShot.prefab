@@ -185,6 +185,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerShot
       objectReference: {fileID: 0}
+    - target: {fileID: 8519027394046547854, guid: 0feecec08d11de94985ad722b59ed582,
+        type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1732930561
+      objectReference: {fileID: 0}
+    - target: {fileID: 8519027394046547854, guid: 0feecec08d11de94985ad722b59ed582,
+        type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0feecec08d11de94985ad722b59ed582, type: 3}
 --- !u!1 &7264775666295528866 stripped

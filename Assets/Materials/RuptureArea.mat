@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SlowDownArea
+  m_Name: RuptureArea
   m_Shader: {fileID: -6465566751694194690, guid: 82894a7eab2dc58409c8cfa54695774f,
     type: 3}
   m_ShaderKeywords: ETC1_EXTERNAL_ALPHA
@@ -34,17 +34,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_1F6F6BFC: 4
-    - Vector1_1FEFE252: 10
+    - Vector1_1FEFE252: 0
     - Vector1_5356B045: 0.5
     - Vector1_B5AB65DF: 5
-    - Vector1_B83C0AE7: 40
+    - Vector1_B83C0AE7: 37
     - Vector1_CF890743: 5
     - Vector1_F05A0EDC: 20
     m_Colors:
     - Color_6969A431: {r: 0, g: 1, b: 0.9184933, a: 0.7490196}
-    - Color_98565D74: {r: 0, g: 0.9489829, b: 1, a: 1}
+    - Color_98565D74: {r: 0.4528302, g: 0.31826273, b: 0.42089894, a: 1}
     - Vector2_2AD08DC8: {r: 0, g: 0, b: 0, a: 0}
     - Vector2_35253512: {r: 32, g: 32, b: 0, a: 0}
-    - Vector2_9132CD72: {r: 0.25, g: 1, b: 0, a: 0}
+    - Vector2_9132CD72: {r: 0.5, g: 1, b: 0, a: 0}
     - Vector2_C057BDFF: {r: 20, g: 20, b: 0, a: 0}
-    - Vector2_D7E6A6C9: {r: 0, g: 1, b: 0, a: 0}
+    - Vector2_D7E6A6C9: {r: 0.25, g: 1, b: 0, a: 0}
