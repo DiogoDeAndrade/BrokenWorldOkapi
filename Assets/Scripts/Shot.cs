@@ -12,6 +12,8 @@ public class Shot : MonoBehaviour
     public GameObject           explosionPrefab;
 
     TimeScaler2d    timeScaler;
+    Vector3         prevPos;
+    int             layerMask = 0;
 
     void Start()
     {
@@ -24,6 +26,18 @@ public class Shot : MonoBehaviour
 
         TrailRenderer tr = GetComponent<TrailRenderer>();
         tr.colorGradient = g;
+
+        prevPos = transform.position;
+
+        var layer = gameObject.layer;
+        layerMask = 0;
+        for (int i = 0; i < 32; i++)
+        {
+            if (!Physics2D.GetIgnoreLayerCollision(layer, i))
+            {
+                layerMask |= 1 << i;
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -46,9 +60,20 @@ public class Shot : MonoBehaviour
             Destroy(gameObject);
 
             if (explosionPrefab)
-            {
-                Instantiate(explosionPrefab, transform.position, transform.rotation);
+            {                
+                Vector3         dir = transform.position - prevPos;
+
+                RaycastHit2D    rayHit = Physics2D.Raycast(prevPos, dir.normalized, dir.magnitude, layerMask);
+                if (rayHit)
+                {
+                    Instantiate(explosionPrefab, rayHit.point, transform.rotation);
+                }
             }
         }
+    }
+
+    private void LateUpdate()
+    {
+        prevPos = transform.position;
     }
 }

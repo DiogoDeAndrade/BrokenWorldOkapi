@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using NaughtyAttributes;
 
 public class Weapon : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class Weapon : MonoBehaviour
     public Color        color = Color.white;
     public float        cooldown = 1.0f;
     public GameObject   muzzleFlash;
+    public bool         shakeEnable;
+    [ShowIf("shakeEnable")]
+    public float        shakeStrength = 1;
+    [ShowIf("shakeEnable")]
+    public float        shakeTime = 0.05f;
 
     [Header("References")]
     public Transform    shootPosition;
@@ -57,6 +63,11 @@ public class Weapon : MonoBehaviour
 
                 cooldownTimer = cooldown;
                 buttonsReleased = false;
+
+                if (shakeEnable)
+                {
+                    CameraShake2d.Shake(shakeStrength, shakeTime);
+                }
             }
         }
         else
