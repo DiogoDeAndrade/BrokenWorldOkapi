@@ -24,6 +24,7 @@ public class Backpack : MonoBehaviour
     public AudioSource      dumpSound;
 
     [Header("Controls")]
+    public bool             enableControls = true;
     public string           absorb = "Absorb";
     public string           use = "Fire2";
 
@@ -72,60 +73,70 @@ public class Backpack : MonoBehaviour
 
         bool enableAbsorbFX = false;
 
-        if (Input.GetButton(absorb))
+        if (enableControls)
         {
-            if (playerController.isGrounded)
+            if (Input.GetButton(absorb))
             {
-                isAbsorbing = true;
-
-                Resource res = GetResource();
-
-                if ((res) &&
-                    (ammount < 1.0f) &&
-                    (res.type != ResourceType.None) &&
-                    ((res.resourceAmmount > 0.0f) || (res.isInfinite)))
+                if (playerController.isGrounded)
                 {
-                    if ((currentType == ResourceType.None) ||
-                        (currentType == res.type) ||
-                        (ammount < 0.05f))
+                    isAbsorbing = true;
+
+                    Resource res = GetResource();
+
+                    if ((res) &&
+                        (ammount < 1.0f) &&
+                        (res.type != ResourceType.None) &&
+                        ((res.resourceAmmount > 0.0f) || (res.isInfinite)))
                     {
-                        if (currentType != res.type) ammount = 0;
+                        if ((currentType == ResourceType.None) ||
+                            (currentType == res.type) ||
+                            (ammount < 0.05f))
+                        {
+                            if (currentType != res.type) ammount = 0;
 
-                        ammount = Mathf.Clamp(ammount + Time.deltaTime * absorbTime, 0.0f, 1.0f);
-                        currentType = res.type;
+                            ammount = Mathf.Clamp(ammount + Time.deltaTime * absorbTime, 0.0f, 1.0f);
+                            currentType = res.type;
 
-                        enableAbsorbFX = true;
-                        absorbFX.color = resourceColors[(int)res.type];
+                            enableAbsorbFX = true;
+                            absorbFX.color = resourceColors[(int)res.type];
 
-                        res.Drain(Time.deltaTime * absorbTime);
+                            res.Drain(Time.deltaTime * absorbTime);
+                        }
                     }
                 }
             }
-        }
-        else
-        {
-            if (Input.GetButton(use))
+            else
             {
-                if (ammount > 0)
+                if (Input.GetButton(use))
                 {
-                    switch (currentType)
+                    if (ammount > 0)
                     {
-                        case ResourceType.None:
-                            break;
-                        case ResourceType.Fuel:
-                            UseJetpack();
-                            break;
-                        case ResourceType.Slow:
-                            UseSlowOrFast();
-                            break;
-                        case ResourceType.Speed:
-                            UseSlowOrFast();
-                            break;
-                        case ResourceType.Space:
-                            UseSlowOrFast();
-                            break;
-                        default:
-                            break;
+                        switch (currentType)
+                        {
+                            case ResourceType.None:
+                                break;
+                            case ResourceType.Fuel:
+                                UseJetpack();
+                                break;
+                            case ResourceType.Slow:
+                                UseSlowOrFast();
+                                break;
+                            case ResourceType.Speed:
+                                UseSlowOrFast();
+                                break;
+                            case ResourceType.Space:
+                                UseSlowOrFast();
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    else
+                    {
+                        var emission = jetpackPS.emission;
+                        emission.enabled = false;
+
+                        jetpackSound.volume = jetpackSound.volume * 0.9f;
                     }
                 }
                 else
@@ -135,13 +146,6 @@ public class Backpack : MonoBehaviour
 
                     jetpackSound.volume = jetpackSound.volume * 0.9f;
                 }
-            }
-            else
-            {
-                var emission = jetpackPS.emission;
-                emission.enabled = false;
-
-                jetpackSound.volume = jetpackSound.volume * 0.9f;
             }
         }
 
@@ -170,7 +174,7 @@ public class Backpack : MonoBehaviour
         emission.enabled = true;
         jetpackSound.volume = 0.8f;
 
-        timeScaler.AddForce(new Vector2(0.0f, jetpackAcceleration), ForceMode2D.Force);
+        timeScaler.AddForce(new Vector2(0.0f, jetpackAcceleration * Time.deltaTime), ForceMode2D.Force);
 
         timeOfJetpack = timeScaler.time;
 

@@ -21,7 +21,8 @@ public class Weapon : MonoBehaviour
     public Transform    shootPosition;
 
     [Header("Controls")]
-    public string fire = "Fire2";
+    public bool         enableControls = true;
+    public string       fire = "Fire2";
 
     Animator                anim;
     TimeScaler2d            timeScaler;
@@ -44,35 +45,38 @@ public class Weapon : MonoBehaviour
             cooldownTimer -= Time.deltaTime * ((timeScaler) ? (timeScaler.timeScale) : (1.0f));
         }
 
-        if ((Input.GetButtonDown(fire)) || (Input.GetAxis("Shoot") != 0))
+        if (enableControls)
         {
-            if ((cooldownTimer <= 0.0f) && (buttonsReleased))
+            if ((Input.GetButtonDown(fire)) || (Input.GetAxis("Shoot") != 0))
             {
-                anim.SetTrigger("Attack");
-
-                if (muzzleFlash)
+                if ((cooldownTimer <= 0.0f) && (buttonsReleased))
                 {
-                    Instantiate(muzzleFlash, shootPosition.position - Vector3.forward * 0.1f, shootPosition.rotation);
-                }
+                    anim.SetTrigger("Attack");
 
-                Shot shot = Instantiate(shotPrefab, shootPosition.position, shootPosition.rotation);
-                shot.damage = damage;
-                shot.speed = speed;
-                shot.color = color;
-                shot.faction = faction;
+                    if (muzzleFlash)
+                    {
+                        Instantiate(muzzleFlash, shootPosition.position - Vector3.forward * 0.1f, shootPosition.rotation);
+                    }
 
-                cooldownTimer = cooldown;
-                buttonsReleased = false;
+                    Shot shot = Instantiate(shotPrefab, shootPosition.position, shootPosition.rotation);
+                    shot.damage = damage;
+                    shot.speed = speed;
+                    shot.color = color;
+                    shot.faction = faction;
 
-                if (shakeEnable)
-                {
-                    CameraShake2d.Shake(shakeStrength, shakeTime);
+                    cooldownTimer = cooldown;
+                    buttonsReleased = false;
+
+                    if (shakeEnable)
+                    {
+                        CameraShake2d.Shake(shakeStrength, shakeTime);
+                    }
                 }
             }
-        }
-        else
-        {
-            buttonsReleased = true;
+            else
+            {
+                buttonsReleased = true;
+            }
         }
     }
 }

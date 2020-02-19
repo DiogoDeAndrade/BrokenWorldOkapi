@@ -23,28 +23,31 @@ public class Door : ActivatedComponent
     {
         anim.SetBool("Lock", !active);
 
-        var collider = Physics2D.OverlapCircle(transform.position, detectionRadius, playerDetectionMask);
-
-        if (collider)
+        if (active)
         {
-            var player = collider.GetComponentInParent<PlayerController>();
+            var collider = Physics2D.OverlapCircle(transform.position, detectionRadius, playerDetectionMask);
 
-            if (player)
+            if (collider)
             {
-                anim.SetBool("Open", true);
+                var player = collider.GetComponentInParent<PlayerController>();
 
-                if (enteringCR == null)
+                if (player)
                 {
-                    if (Vector3.Distance(collider.transform.position, transform.position) < enterRadius)
+                    anim.SetBool("Open", true);
+
+                    if (enteringCR == null)
                     {
-                        enteringCR = StartCoroutine(EnterCR(player));
+                        if (Vector3.Distance(collider.transform.position, transform.position) < enterRadius)
+                        {
+                            enteringCR = StartCoroutine(EnterCR(player));
+                        }
                     }
                 }
             }
-        }
-        else
-        {
-            anim.SetBool("Open", false);
+            else
+            {
+                anim.SetBool("Open", false);
+            }
         }
     }
 
@@ -60,5 +63,14 @@ public class Door : ActivatedComponent
         yield return new WaitForSeconds(2.0f);
 
         SceneManager.LoadScene(targetScene);
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireSphere(transform.position, detectionRadius);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, enterRadius);
     }
 }

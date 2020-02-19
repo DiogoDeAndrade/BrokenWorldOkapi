@@ -25,20 +25,31 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
+        CheckAndSpawnPlayer();
+
         if ((text != null) && (text.Length > 0))
         {
-            StartCoroutine("TutorialCR");
+            StartCoroutine(TutorialCR());
         }
 
-        resources = GameObject.FindObjectsOfType<Resource>();
+        resources = FindObjectsOfType<Resource>();
+    }
+
+    void CheckAndSpawnPlayer()
+    {
+        if (player == null)
+        {
+            player = FindObjectOfType<PlayerController>();
+            if (player == null)
+            {
+                player = Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
+            }
+        }
     }
 
     void Update()
     {
-        if (player == null)
-        {
-            player = Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
-        }
+        CheckAndSpawnPlayer();
 
         if (openDoorWhenNoAnomalies)
         {
@@ -72,6 +83,11 @@ public class LevelManager : MonoBehaviour
     {
         textBox.gameObject.SetActive(true);
 
+        if (player)
+        {
+            player.EnableControls(false);
+        }
+
         foreach (var t in text)
         {
             textComponent.text = t;
@@ -88,5 +104,10 @@ public class LevelManager : MonoBehaviour
         }
 
         textBox.gameObject.SetActive(false);
+
+        if (player)
+        {
+            player.EnableControls(true);
+        }
     }
 }
