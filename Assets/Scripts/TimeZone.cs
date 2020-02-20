@@ -21,7 +21,10 @@ public class TimeZone : Resource
 
     void Awake()
     {
-        type = (speedModifier > 1.0f) ? (ResourceType.Speed) : (ResourceType.Slow);
+        if (speedModifier > 1.0f)
+            type = ResourceType.Speed;
+        else if (speedModifier < 1)
+            type = ResourceType.Slow;
         initialSpeed = speedModifier;
         resourceAmmount = 1.0f;
 

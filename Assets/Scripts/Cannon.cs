@@ -31,7 +31,7 @@ public class Cannon : MonoBehaviour
 
     int                     index = 0;
     float                   cooldownTimer;
-    HealthSystem.Faction    faction;
+    HealthSystem            health;
 
     bool IsAuto() { return mode == Mode.Auto; }
     bool IsLos() { return mode == Mode.Los; }
@@ -40,11 +40,13 @@ public class Cannon : MonoBehaviour
     void Start()
     {
         cooldownTimer = 0.0f;
-        faction = GetComponentInParent<HealthSystem>().faction;
+        health = GetComponentInParent<HealthSystem>();
     }
 
     void Update()
     {
+        if (health.normalizedHealth <= 0.0f) return;
+
         if (wakeTime > 0)
         {
             wakeTime -= Time.deltaTime;
@@ -81,7 +83,7 @@ public class Cannon : MonoBehaviour
                     HealthSystem hs = collider.GetComponentInParent<HealthSystem>();
                     if (hs)
                     {
-                        if (faction != hs.faction)
+                        if (health.faction != hs.faction)
                         {
                             Vector3 toTarget = (hs.transform.position - transform.position).normalized;
 
@@ -111,6 +113,6 @@ public class Cannon : MonoBehaviour
         shot.damage = damage;
         shot.speed = speed;
         shot.color = color;
-        shot.faction = faction;
+        shot.faction = health.faction;
     }
 }

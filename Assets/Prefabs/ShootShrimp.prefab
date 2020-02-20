@@ -48,7 +48,7 @@ MonoBehaviour:
   shotPrefab: {fileID: 6680307691916989259, guid: fe52ee1ec57853e4ba73f32a40868e54,
     type: 3}
   wakeTime: 0
-  damage: 25
+  damage: 50
   speed: 100
   color: {r: 0.20781039, g: 0.7075472, b: 0.14351194, a: 1}
   sequence: 010101000000
@@ -66,6 +66,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2851548252642906011, guid: eaa1a324f7cff77478834af06216c03c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3620633700243893921, guid: eaa1a324f7cff77478834af06216c03c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -125,6 +130,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ShootShrimp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5808071846735283133, guid: eaa1a324f7cff77478834af06216c03c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8125715425368916022, guid: eaa1a324f7cff77478834af06216c03c,
         type: 3}

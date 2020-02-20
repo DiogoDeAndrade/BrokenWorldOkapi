@@ -63,7 +63,7 @@ public class Shot : MonoBehaviour
             {                
                 Vector3         dir = transform.position - prevPos;
 
-                RaycastHit2D    rayHit = Physics2D.Raycast(prevPos, dir.normalized, dir.magnitude, layerMask);
+                RaycastHit2D    rayHit = Physics2D.Raycast(prevPos, dir.normalized, dir.magnitude * 1.5f, layerMask);
                 if (rayHit)
                 {
                     Instantiate(explosionPrefab, rayHit.point, transform.rotation);

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using NaughtyAttributes;
+using UnityEngine.Events;
 
 public class LevelManager : MonoBehaviour
 {
@@ -20,8 +21,16 @@ public class LevelManager : MonoBehaviour
     public RectTransform    textBox;
     public TextMeshProUGUI  textComponent;
 
+    [Header("Events")]
+    public UnityEvent       onSpawn;
+
     PlayerController player;
     Resource[]       resources;
+
+    public bool textEnabled
+    {
+        get { return textBox.gameObject.activeInHierarchy; }
+    }
 
     void Start()
     {
@@ -30,6 +39,10 @@ public class LevelManager : MonoBehaviour
         if ((text != null) && (text.Length > 0))
         {
             StartCoroutine(TutorialCR());
+        }
+        else
+        {
+            textBox.gameObject.SetActive(false);
         }
 
         resources = FindObjectsOfType<Resource>();
@@ -43,6 +56,10 @@ public class LevelManager : MonoBehaviour
             if (player == null)
             {
                 player = Instantiate(playerPrefab, spawnPoint.position, spawnPoint.rotation);
+                if (onSpawn != null)
+                {
+                    onSpawn.Invoke();
+                }
             }
         }
     }
@@ -101,6 +118,40 @@ public class LevelManager : MonoBehaviour
             {
                 yield return null;
             }
+        }
+
+        textBox.gameObject.SetActive(false);
+
+        if (player)
+        {
+            player.EnableControls(true);
+        }
+    }
+
+    public void DisplayText(string str)
+    {
+        StartCoroutine(DisplayTextCR(str));
+    }
+
+    IEnumerator DisplayTextCR(string str)
+    {
+        textBox.gameObject.SetActive(true);
+
+        if (player)
+        {
+            player.EnableControls(false);
+        }
+
+        textComponent.text = str;
+
+        while (Input.anyKeyDown)
+        {
+            yield return null;
+        }
+
+        while (!Input.anyKeyDown)
+        {
+            yield return null;
         }
 
         textBox.gameObject.SetActive(false);

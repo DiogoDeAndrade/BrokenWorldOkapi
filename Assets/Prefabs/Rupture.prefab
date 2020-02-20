@@ -28,11 +28,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5141393483038673453, guid: 24badf168fc91994c902f7b4627c9d32,
-        type: 3}
-      propertyPath: m_Name
-      value: Rupture
-      objectReference: {fileID: 0}
     - target: {fileID: 5141393482866422985, guid: 24badf168fc91994c902f7b4627c9d32,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
@@ -47,6 +42,21 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
       value: 0.37313974
+      objectReference: {fileID: 0}
+    - target: {fileID: 5141393483038673453, guid: 24badf168fc91994c902f7b4627c9d32,
+        type: 3}
+      propertyPath: m_Name
+      value: Rupture
+      objectReference: {fileID: 0}
+    - target: {fileID: 5141393483038673454, guid: 24badf168fc91994c902f7b4627c9d32,
+        type: 3}
+      propertyPath: type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5141393483038673454, guid: 24badf168fc91994c902f7b4627c9d32,
+        type: 3}
+      propertyPath: speedModifier
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5141393483038673872, guid: 24badf168fc91994c902f7b4627c9d32,
         type: 3}
@@ -113,17 +123,8 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5141393483038673454, guid: 24badf168fc91994c902f7b4627c9d32,
-        type: 3}
-      propertyPath: type
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5141393483038673454, guid: 24badf168fc91994c902f7b4627c9d32,
-        type: 3}
-      propertyPath: speedModifier
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5141393483038673454, guid: 24badf168fc91994c902f7b4627c9d32, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 24badf168fc91994c902f7b4627c9d32, type: 3}
 --- !u!1 &4056509615905167152 stripped
 GameObject:

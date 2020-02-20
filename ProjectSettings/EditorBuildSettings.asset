@@ -36,7 +36,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Level8.unity
     guid: a618ec02786117e40b601ded94fcbfec
   - enabled: 1
-    path: Assets/Scenes/Level9.unity
+    path: Assets/Scenes/ExplosionCutscene.unity
     guid: a83fc47cd1b3d094ab0ceb6f7233f886
   - enabled: 1
     path: Assets/Scenes/Playground.unity
