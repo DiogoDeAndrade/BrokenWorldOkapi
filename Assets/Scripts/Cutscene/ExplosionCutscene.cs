@@ -1,16 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Experimental.Rendering.LWRP;
 
 public class ExplosionCutscene : MonoBehaviour
 {
     public Transform    targetPos;
     public Animator     commander;
-    public Light2D      light;
+    new public Light2D  light;
     public AudioSource  explosionSound;
     public Transform[]  explosionPoints;
     public GameObject   explosionPrefab;
+    public AudioSource  alarmSound;
+    public AudioSource  crowdSound;
 
     LevelManager    levelManager;
 
@@ -23,16 +26,19 @@ public class ExplosionCutscene : MonoBehaviour
 
     IEnumerator RunCutsceneCR()
     {
+        PlayerController pc = FindObjectOfType<PlayerController>();
+
         commander.SetBool("Grounded", true);
+        pc.enableControls = false;
 
         yield return new WaitForSeconds(1.0f);
-
-        PlayerController pc = FindObjectOfType<PlayerController>();
 
         pc.enabled = false;
 
         Animator playerAnim = pc.GetComponent<Animator>();
         playerAnim.SetFloat("AbsSpeedX", pc.moveSpeed);
+
+        Destroy(pc.GetComponent<HealthSystem>());
 
         while (playerAnim.transform.position.x < targetPos.position.x)
         {
@@ -58,6 +64,8 @@ public class ExplosionCutscene : MonoBehaviour
         while (levelManager.textEnabled) { yield return null; }
 
         StartCoroutine(AlarmCR());
+        alarmSound.Play();
+        crowdSound.Stop();
 
         yield return new WaitForSeconds(1.0f);
 
@@ -87,6 +95,11 @@ public class ExplosionCutscene : MonoBehaviour
             Instantiate(explosionPrefab, explosionPoints[i].position, explosionPoints[i].rotation);
         }
 
+        FullscreenFader.FadeOut(0.6f, Color.white);
+
+        yield return new WaitForSeconds(0.6f);
+
+        SceneManager.LoadScene("RealGame");
     }
 
     IEnumerator AlarmCR()

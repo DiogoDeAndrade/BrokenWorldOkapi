@@ -35,6 +35,8 @@ The only thing that is actually interesting is in the [UnityCommon] library: the
 * Planet by [FunwithPixels]
 * Font by [OmegaPC777]
 * Triumph sound by [FunWithSound]
+* Alarm sound by [onderwish]
+* Crowd sound by [Adam_N]
 
 ## Licenses
 
@@ -55,6 +57,8 @@ The rest are covered by their own licenses!
 [OmegaPC777]:https://www.dafont.com/pt/omegapc777.d6598
 [FunwithPixels]:https://opengameart.org/users/funwithpixels
 [FunWithSound]:https://freesound.org/people/FunWithSound/
+[onderwish]:https://freesound.org/people/onderwish/
+[Adam_N]:https://freesound.org/people/Adam_N/
 [UnityCommon]:https://github.com/DiogoDeAndrade/UnityCommon
 [TimeScaler2d Component]:https://github.com/DiogoDeAndrade/UnityCommon/tree/master/TimeScaler
 [2020 Global Game Jam game]:https://github.com/DiogoDeAndrade/BrokenWorldGGJ2020

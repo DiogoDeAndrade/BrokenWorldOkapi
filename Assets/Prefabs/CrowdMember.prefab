@@ -145,8 +145,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   faction: 0
   maxHealth: 100
-  invulnerabilityTime: 2
-  invulnerabilityBlink: 1
+  invulnerabilityTime: 0
+  invulnerabilityBlink: 0
 --- !u!114 &6617810401699456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbde5626ee858e641a9ad39478a94fc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  psDead: {fileID: 3832997851606794344}
   crowdColors:
   - {r: 1, g: 1, b: 1, a: 1}
   - {r: 0.28862584, g: 0.8867924, b: 0.41410792, a: 1}

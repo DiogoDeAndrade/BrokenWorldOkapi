@@ -60,6 +60,12 @@ public class LevelManager : MonoBehaviour
                 {
                     onSpawn.Invoke();
                 }
+
+                CameraFollow cf = FindObjectOfType<CameraFollow>();
+                if (cf)
+                {
+                    cf.targetObject = (player.followPos) ? player.followPos : player.transform;
+                }
             }
         }
     }

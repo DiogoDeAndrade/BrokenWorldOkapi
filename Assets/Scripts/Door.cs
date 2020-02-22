@@ -60,7 +60,11 @@ public class Door : ActivatedComponent
 
         player.Celebrate();
 
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.0f);
+
+        FullscreenFader.FadeOut(1.0f);
+
+        yield return new WaitForSeconds(1.5f);
 
         SceneManager.LoadScene(targetScene);
     }
