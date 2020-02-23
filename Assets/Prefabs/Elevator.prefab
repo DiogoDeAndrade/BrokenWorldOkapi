@@ -238,7 +238,6 @@ MonoBehaviour:
   waypoints:
   - {fileID: 7809414835591606769}
   - {fileID: 7809414834964384692}
-  - {fileID: 0}
   loop: 0
   influenceArea: {fileID: 7809414835591606770}
   carryLayers:

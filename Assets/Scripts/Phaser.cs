@@ -6,7 +6,8 @@ public class Phaser : Enemy
 {
     public float moveSpeed = 0.05f;
     public float idleTime = 2.0f;
-    public float maxDist = 100.0f;    
+    public float maxDist = 100.0f;
+    public float maxDetectionRadius = 200.0f;
 
     Vector3 targetPos;
     float   waitTime;
@@ -34,7 +35,7 @@ public class Phaser : Enemy
 
                 // Find player
                 PlayerController pc = GameObject.FindObjectOfType<PlayerController>();
-                if ((pc) && (!pc.isInvulnerable) && (!pc.isDead))
+                if ((pc) && (!pc.isInvulnerable) && (!pc.isDead) && (Vector3.Distance(pc.transform.position, transform.position) < maxDetectionRadius))
                 {
                     targetPos = pc.GetFollowTarget().position;
 

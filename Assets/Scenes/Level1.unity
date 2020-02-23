@@ -14123,7 +14123,7 @@ PrefabInstance:
     - target: {fileID: 7643355005145383647, guid: 46c320d5baa944809a22e156f51280f7,
         type: 3}
       propertyPath: m_Name
-      value: Canvas
+      value: Narration
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46c320d5baa944809a22e156f51280f7, type: 3}

@@ -26,6 +26,7 @@ public class LevelManager : MonoBehaviour
 
     PlayerController player;
     Resource[]       resources;
+    AudioSource      blipSound;
 
     public bool textEnabled
     {
@@ -34,6 +35,8 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
+        blipSound = textBox.GetComponent<AudioSource>();
+
         CheckAndSpawnPlayer();
 
         if ((text != null) && (text.Length > 0))
@@ -113,6 +116,8 @@ public class LevelManager : MonoBehaviour
 
         foreach (var t in text)
         {
+            if (blipSound) blipSound.Play();
+
             textComponent.text = t;
 
             while (!Input.anyKeyDown)
@@ -125,6 +130,8 @@ public class LevelManager : MonoBehaviour
                 yield return null;
             }
         }
+
+        if (blipSound) blipSound.Play();
 
         textBox.gameObject.SetActive(false);
 
@@ -148,6 +155,8 @@ public class LevelManager : MonoBehaviour
             player.EnableControls(false);
         }
 
+        if (blipSound) blipSound.Play();
+
         textComponent.text = str;
 
         while (Input.anyKeyDown)
@@ -161,6 +170,8 @@ public class LevelManager : MonoBehaviour
         }
 
         textBox.gameObject.SetActive(false);
+
+        if (blipSound) blipSound.Play();
 
         if (player)
         {
