@@ -10035,8 +10035,8 @@ MonoBehaviour:
   text:
   - Here's a space distortion, it's the most dangerous of all the anomalies!
   - Through it, inter-dimensional creatures can come through!
-  - You can shoot and kill them by pressing the right trigger/bumper, but this just
-    gets rid of them temporarily!
+  - You can shoot and kill them by pressing the left button, but this just gets rid
+    of them temporarily!
   - The only way to get rid of them for sure is to close the rift like you do with
     the time warps!
   spawnPoint: {fileID: 1566830768}
@@ -14385,6 +14385,75 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 46c320d5baa944809a22e156f51280f7, type: 3}
+--- !u!1001 &1889854279
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8849417147654117053, guid: f129f876a5d2e7a4e93663d4c2d8091c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -68.60952
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849417147654117053, guid: f129f876a5d2e7a4e93663d4c2d8091c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -122.96009
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849417147654117053, guid: f129f876a5d2e7a4e93663d4c2d8091c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -78
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849417147654117053, guid: f129f876a5d2e7a4e93663d4c2d8091c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849417147654117053, guid: f129f876a5d2e7a4e93663d4c2d8091c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849417147654117053, guid: f129f876a5d2e7a4e93663d4c2d8091c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849417147654117053, guid: f129f876a5d2e7a4e93663d4c2d8091c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849417147654117053, guid: f129f876a5d2e7a4e93663d4c2d8091c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849417147654117053, guid: f129f876a5d2e7a4e93663d4c2d8091c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849417147654117053, guid: f129f876a5d2e7a4e93663d4c2d8091c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849417147654117053, guid: f129f876a5d2e7a4e93663d4c2d8091c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849417147654117059, guid: f129f876a5d2e7a4e93663d4c2d8091c,
+        type: 3}
+      propertyPath: m_Name
+      value: TutorialMusic
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f129f876a5d2e7a4e93663d4c2d8091c, type: 3}
 --- !u!1 &2088676509
 GameObject:
   m_ObjectHideFlags: 0

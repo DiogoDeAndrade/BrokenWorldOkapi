@@ -37,6 +37,8 @@ The only thing that is actually interesting is in the [UnityCommon] library: the
 * Triumph sound by [FunWithSound]
 * Alarm sound by [onderwish]
 * Crowd sound by [Adam_N]
+* Tutorial music by [Lobo Loco]
+* Title and main level music by [Alien Operator]
 
 ## Licenses
 
@@ -59,6 +61,8 @@ The rest are covered by their own licenses!
 [FunWithSound]:https://freesound.org/people/FunWithSound/
 [onderwish]:https://freesound.org/people/onderwish/
 [Adam_N]:https://freesound.org/people/Adam_N/
+[Lobo Loco]:https://freemusicarchive.org/music/Lobo_Loco
+[Alien Operator]:https://freemusicarchive.org/music/Alien_Operator
 [UnityCommon]:https://github.com/DiogoDeAndrade/UnityCommon
 [TimeScaler2d Component]:https://github.com/DiogoDeAndrade/UnityCommon/tree/master/TimeScaler
 [2020 Global Game Jam game]:https://github.com/DiogoDeAndrade/BrokenWorldGGJ2020

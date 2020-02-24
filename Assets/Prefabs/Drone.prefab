@@ -59,6 +59,24 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   directAtTarget: 0
+--- !u!114 &140983987920236099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6974434081840699118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5394b40cbff47b04aaa7989e0d60a5b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  baseDamage: 25
+  freezeAfterDamage: 2
+  deathSound: {fileID: 2122693647215323961}
+  deathFXPrefab: {fileID: 2442504497645055759, guid: 6e41a8a4c7ca2ad4e9bccd0a48cdfc8b,
+    type: 3}
+  hitSound: {fileID: 2061087905521445357}
 --- !u!1001 &1489597394654554341
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66,6 +84,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1640242172970636058, guid: d3733f574ef3c6c4eb38ea59f22c1db1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935427140620374161, guid: d3733f574ef3c6c4eb38ea59f22c1db1,
+        type: 3}
+      propertyPath: useAnimatorForBlink
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935427140620374161, guid: d3733f574ef3c6c4eb38ea59f22c1db1,
+        type: 3}
+      propertyPath: invulnerabilityTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3935427140620374161, guid: d3733f574ef3c6c4eb38ea59f22c1db1,
+        type: 3}
+      propertyPath: maxHealth
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 7046894290948562748, guid: d3733f574ef3c6c4eb38ea59f22c1db1,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8387450902721953284, guid: d3733f574ef3c6c4eb38ea59f22c1db1,
         type: 3}
       propertyPath: m_Controller
@@ -140,9 +183,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3733f574ef3c6c4eb38ea59f22c1db1, type: 3}
+--- !u!1 &6974434081840699118 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8387450902721953291, guid: d3733f574ef3c6c4eb38ea59f22c1db1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1489597394654554341}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6974434081840699107 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8387450902721953286, guid: d3733f574ef3c6c4eb38ea59f22c1db1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1489597394654554341}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &2061087905521445357 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 591775263601115400, guid: d3733f574ef3c6c4eb38ea59f22c1db1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1489597394654554341}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &2122693647215323961 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 709684521918006236, guid: d3733f574ef3c6c4eb38ea59f22c1db1,
     type: 3}
   m_PrefabInstance: {fileID: 1489597394654554341}
   m_PrefabAsset: {fileID: 0}

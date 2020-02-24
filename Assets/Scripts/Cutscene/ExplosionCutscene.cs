@@ -97,7 +97,7 @@ public class ExplosionCutscene : MonoBehaviour
 
         FullscreenFader.FadeOut(0.6f, Color.white);
 
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(3.0f);
 
         SceneManager.LoadScene("RealGame");
     }

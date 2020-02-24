@@ -39,9 +39,9 @@ EditorBuildSettings:
     path: Assets/Scenes/ExplosionCutscene.unity
     guid: a83fc47cd1b3d094ab0ceb6f7233f886
   - enabled: 1
-    path: Assets/Scenes/Playground.unity
-    guid: d1c3109bdb54ad54c8a2b2838528e640
-  - enabled: 1
     path: Assets/Scenes/RealGame.unity
     guid: a36c27a6a09d7844a8e743030f5387eb
+  - enabled: 1
+    path: Assets/Scenes/EndGame.unity
+    guid: a6b1f6533def69d4b99fc8ac61c712b7
   m_configObjects: {}

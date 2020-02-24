@@ -11643,7 +11643,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: fccfcd1d22f90b2468332eda0da1031f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.496
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -22938,6 +22938,8 @@ MonoBehaviour:
   maxHealth: 100
   invulnerabilityTime: 2
   invulnerabilityBlink: 1
+  useAnimatorForBlink: 1
+  blinkTime: 0.1
 --- !u!1001 &7582733672762894749
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -7,9 +7,15 @@ public class TitleScreen : MonoBehaviour
 {
     public CanvasGroup      titleCanvasGroup;
     public RectTransform    textRT;
+    public string           startLevel = "Level1";
 
     void Start()
     {
+#if !UNITY_EDITOR
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+#endif
+
         StartCoroutine(TitleCR());        
     }
 
@@ -42,15 +48,19 @@ public class TitleScreen : MonoBehaviour
 
         float y = textRT.anchoredPosition.y;
 
-        while ((y < 1200.0f) && (!Input.anyKeyDown))
+        while ((y < 1500.0f) && (!Input.anyKeyDown))
         {
             y += Time.deltaTime * 50.0f;
 
-            textRT.anchoredPosition = new Vector2(0, y);
+            textRT.anchoredPosition = new Vector2(textRT.anchoredPosition.x, y);
 
             yield return null;
         }
 
-        SceneManager.LoadScene("Level1");
+        FullscreenFader.FadeOut(2.0f);
+
+        yield return new WaitForSeconds(2.0f);
+
+        SceneManager.LoadScene(startLevel);
     }
 }

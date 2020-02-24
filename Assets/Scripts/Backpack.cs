@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -52,8 +53,20 @@ public class Backpack : MonoBehaviour
 
         playerController = GetComponent<PlayerController>();
         gravityScaleNormal = playerController.gravityJumpMultiplier;
+
+        HealthSystem healthSystem = GetComponent<HealthSystem>();
+        healthSystem.onDead += OnDead;
     }
-    
+
+    private void OnDead()
+    {
+        LevelManager lvlManager = FindObjectOfType<LevelManager>();
+        if (lvlManager)
+        {
+            lvlManager.SetInitialBackpack(currentType, ammount);
+        }
+    }
+
     void Update()
     {
         if (playerController.isDead) return;
@@ -221,5 +234,11 @@ public class Backpack : MonoBehaviour
         }
 
         return null;
+    }
+
+    public void SetResource(ResourceType type, float ammount)
+    {
+        this.ammount = ammount;
+        this.currentType = type;
     }
 }

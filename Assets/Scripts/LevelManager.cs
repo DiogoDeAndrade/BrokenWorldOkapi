@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 using NaughtyAttributes;
 using UnityEngine.Events;
@@ -27,6 +28,9 @@ public class LevelManager : MonoBehaviour
     PlayerController player;
     Resource[]       resources;
     AudioSource      blipSound;
+
+    ResourceType        initialResourceType = ResourceType.None;
+    float               initialResourceAmmount = 0.0f;
 
     public bool textEnabled
     {
@@ -63,6 +67,16 @@ public class LevelManager : MonoBehaviour
                 {
                     onSpawn.Invoke();
                 }
+
+                Backpack backpack = player.GetComponent<Backpack>();
+                if (backpack)
+                {
+                    backpack.SetResource(initialResourceType, initialResourceAmmount);
+                }
+
+                initialResourceType = ResourceType.None;
+                initialResourceAmmount = 0;
+
 
                 CameraFollow cf = FindObjectOfType<CameraFollow>();
                 if (cf)
@@ -102,6 +116,19 @@ public class LevelManager : MonoBehaviour
             (Input.GetKey(KeyCode.LeftShift) || (Input.GetKey(KeyCode.RightShift))))
         {
             Application.Quit();
+        }
+
+        // Hacks to skip level
+        if ((Input.GetKeyDown(KeyCode.T)) &&
+            (Input.GetKey(KeyCode.LeftShift) || (Input.GetKey(KeyCode.RightShift))))
+        {
+            SceneManager.LoadScene("Level8");
+        }
+
+        if ((Input.GetKeyDown(KeyCode.G)) &&
+            (Input.GetKey(KeyCode.LeftShift) || (Input.GetKey(KeyCode.RightShift))))
+        {
+            SceneManager.LoadScene("RealGame");
         }
     }
 
@@ -177,5 +204,11 @@ public class LevelManager : MonoBehaviour
         {
             player.EnableControls(true);
         }
+    }
+
+    public void SetInitialBackpack(ResourceType type, float ammount)
+    {
+        initialResourceType = type;
+        initialResourceAmmount = ammount;
     }
 }

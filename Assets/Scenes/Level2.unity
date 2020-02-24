@@ -9920,8 +9920,8 @@ MonoBehaviour:
   door: {fileID: 0}
   text:
   - Some doors are closed, and have to be opened using a switch.
-  - On this room, to reach the switch, you'll have to jump using the X button.
-  - When you reach the console, press the Y button to interact with it.
+  - On this room, to reach the switch, you'll have to jump pressing up on the joystick.
+  - When you reach the console, press the joystick down to interact with it.
   - Then go through to the next room!
   spawnPoint: {fileID: 1566830768}
   playerPrefab: {fileID: 6638228750335921789, guid: dc58beb9e38e4b94987f1b39612d41eb,
@@ -9946,6 +9946,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1141270561
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8849417147654117053, guid: f129f876a5d2e7a4e93663d4c2d8091c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -68.60952
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849417147654117053, guid: f129f876a5d2e7a4e93663d4c2d8091c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -122.96009
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849417147654117053, guid: f129f876a5d2e7a4e93663d4c2d8091c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -78
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849417147654117053, guid: f129f876a5d2e7a4e93663d4c2d8091c,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849417147654117053, guid: f129f876a5d2e7a4e93663d4c2d8091c,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849417147654117053, guid: f129f876a5d2e7a4e93663d4c2d8091c,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849417147654117053, guid: f129f876a5d2e7a4e93663d4c2d8091c,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849417147654117053, guid: f129f876a5d2e7a4e93663d4c2d8091c,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849417147654117053, guid: f129f876a5d2e7a4e93663d4c2d8091c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849417147654117053, guid: f129f876a5d2e7a4e93663d4c2d8091c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849417147654117053, guid: f129f876a5d2e7a4e93663d4c2d8091c,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8849417147654117059, guid: f129f876a5d2e7a4e93663d4c2d8091c,
+        type: 3}
+      propertyPath: m_Name
+      value: TutorialMusic
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f129f876a5d2e7a4e93663d4c2d8091c, type: 3}
 --- !u!1001 &1223925147
 PrefabInstance:
   m_ObjectHideFlags: 0

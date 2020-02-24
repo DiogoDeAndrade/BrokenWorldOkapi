@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public float        baseDamage = 25.0f;
     public float        freezeAfterDamage = 2.0f;
     public AudioSource  deathSound;
+    public GameObject   deathFXPrefab;
     public AudioSource  hitSound;
 
     protected TimeScaler2d      timeScaler;
@@ -116,6 +117,10 @@ public class Enemy : MonoBehaviour
         anim.SetTrigger("Dead");
 
         if (deathSound) deathSound.Play();
+        if (deathFXPrefab)
+        {
+            Instantiate(deathFXPrefab, transform.position, transform.rotation);
+        }
     }
 
     private void OnHit(float damage)

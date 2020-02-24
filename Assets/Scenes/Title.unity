@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -273,6 +273,125 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &301565487
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7582733672073457440, guid: 1e7cd0e1467e07b4886902911cc91fa9,
+        type: 3}
+      propertyPath: m_Name
+      value: FaderCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582733672073457500, guid: 1e7cd0e1467e07b4886902911cc91fa9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582733672073457500, guid: 1e7cd0e1467e07b4886902911cc91fa9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582733672073457500, guid: 1e7cd0e1467e07b4886902911cc91fa9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582733672073457500, guid: 1e7cd0e1467e07b4886902911cc91fa9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582733672073457500, guid: 1e7cd0e1467e07b4886902911cc91fa9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582733672073457500, guid: 1e7cd0e1467e07b4886902911cc91fa9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582733672073457500, guid: 1e7cd0e1467e07b4886902911cc91fa9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582733672073457500, guid: 1e7cd0e1467e07b4886902911cc91fa9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582733672073457500, guid: 1e7cd0e1467e07b4886902911cc91fa9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582733672073457500, guid: 1e7cd0e1467e07b4886902911cc91fa9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582733672073457500, guid: 1e7cd0e1467e07b4886902911cc91fa9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582733672073457500, guid: 1e7cd0e1467e07b4886902911cc91fa9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582733672073457500, guid: 1e7cd0e1467e07b4886902911cc91fa9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582733672073457500, guid: 1e7cd0e1467e07b4886902911cc91fa9,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582733672073457500, guid: 1e7cd0e1467e07b4886902911cc91fa9,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582733672073457500, guid: 1e7cd0e1467e07b4886902911cc91fa9,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582733672073457500, guid: 1e7cd0e1467e07b4886902911cc91fa9,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582733672073457500, guid: 1e7cd0e1467e07b4886902911cc91fa9,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582733672073457500, guid: 1e7cd0e1467e07b4886902911cc91fa9,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582733672073457500, guid: 1e7cd0e1467e07b4886902911cc91fa9,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7582733672073457500, guid: 1e7cd0e1467e07b4886902911cc91fa9,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1e7cd0e1467e07b4886902911cc91fa9, type: 3}
 --- !u!1 &336305881
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,6 +483,205 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &401863645
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 401863646}
+  - component: {fileID: 401863648}
+  - component: {fileID: 401863647}
+  m_Layer: 5
+  m_Name: TMP SubMeshUI [Pixeled SDF Material + LiberationSans SDF Atlas]
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &401863646
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401863645}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1071354740}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &401863647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401863645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 058cba836c1846c3aa1c5fd2e28aea77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_spriteAsset: {fileID: 0}
+  m_material: {fileID: 0}
+  m_sharedMaterial: {fileID: 0}
+  m_isDefaultMaterial: 0
+  m_padding: 1.25
+  m_canvasRenderer: {fileID: 401863648}
+  m_TextComponent: {fileID: 1071354741}
+  m_materialReferenceIndex: 1
+--- !u!222 &401863648
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401863645}
+  m_CullTransparentMesh: 0
+--- !u!1 &823788722
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 823788724}
+  - component: {fileID: 823788723}
+  m_Layer: 0
+  m_Name: Music
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &823788723
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823788722}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ecfd634e2cfb8614687ef1886782006a, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.261
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &823788724
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823788722}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 591.36884, y: -637.37573, z: -219}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1071354739
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,14 +710,15 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 401863646}
   m_Father: {fileID: 1440710682}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 20, y: -720}
-  m_SizeDelta: {x: 1240, y: 50}
+  m_AnchoredPosition: {x: 40, y: -720}
+  m_SizeDelta: {x: 1200, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1071354741
 MonoBehaviour:
@@ -419,59 +738,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Broken World
-
-    --------------
-
-
-    Created for the Global Game Jam 2020
-
-    Theme: "Repair"
-
-
-    All code, design, and most sound by
-
-    Diogo Andrade
-
-
-    Art
-
-    Character: IMakeGames
-
-    Enemies: Stephen Challener
-
-    Planet: FunwithPixels
-
-    Font: OmegaPC777
-
-
-    Sound
-
-    Triumph Sound: by FunWithSound
-
-
-    --------------
-
-    The game isn''t finished, so feel free to grab it from Github and work with it!
-
-
-    --------------
-
-    If you want some story...
-
-    The Universe is collapsing from anomalies in space-time...
-
-    An inter-galatic agency was formed, filled with agents that go into broken planets
-    and repair the damage done using state of the art neutronic ionized backpacks.
-
-
-    You''re a student in your last exam, to be able to join the ranks of men and women
-    that are responsible for saving the Universe...
-
-
-    You are...
-
-    Agent 123-A!'
+  m_text: "Broken World\r\n--------------\r\n\r\nThe Universe is collapsing from anomalies
+    in space-time...\r\nAn inter-galatic agency was formed, filled with agents that
+    go into broken planets and repair the damage done using state of the art neutronic
+    ionized backpacks.\r\n\r\nYou're a student in your last exam, to be able to join
+    the ranks of men and women that are responsible for saving the Universe...\r\n\r\nYou
+    are...\r\nAgent 123-A!\r\n\r\n-------------\r\nCreated for the Global Game Jam
+    2020\r\nTheme: \"Repair\"\r\nUpdated and more or less completed for the Okapi
+    Game Design Club.\r\n\r\nAll code, design, most sound, some art by\r\nDiogo Andrade\r\n\r\nArt\r\nCharacter:
+    IMakeGames\r\nEnemies: Stephen Challener\r\nPlanet: FunwithPixels\r\nFont: OmegaPC777\r\n\r\nSound\r\nTriumph
+    Sound: by FunWithSound\r\nAlarm sound by onderwish\r\nCrowd sound by Adam_N\r\nTutorial
+    music by Lobo Loco\r\nTitle and main level music by Alien Operator\r\n\r\n--------------\r\nThe
+    game is more or less finished, it just lacks an end state, but feel free\r\nto
+    grab it from Github and work with it!\r\n\r"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e088a27af552e90438c8f855317b3177, type: 2}
   m_sharedMaterial: {fileID: -2594678606940529265, guid: e088a27af552e90438c8f855317b3177,
@@ -506,7 +785,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 16
   m_textAlignment: 257
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -541,12 +820,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1071354741}
-    characterCount: 777
+    characterCount: 1019
     spriteCount: 0
-    spaceCount: 129
-    wordCount: 122
+    spaceCount: 168
+    wordCount: 161
     linkCount: 0
-    lineCount: 34
+    lineCount: 42
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -555,7 +834,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_subTextObjects:
   - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 401863647}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

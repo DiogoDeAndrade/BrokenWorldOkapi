@@ -18,7 +18,8 @@ MonoBehaviour:
   hitSound: {fileID: 2203567462573429682}
   moveSpeed: 0.1
   idleTime: 2
-  maxDist: 100
+  maxDist: 50
+  maxDetectionRadius: 100
 --- !u!1001 &1631090973109031610
 PrefabInstance:
   m_ObjectHideFlags: 0

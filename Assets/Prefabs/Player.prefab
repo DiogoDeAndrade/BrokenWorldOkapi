@@ -11357,6 +11357,11 @@ PrefabInstance:
       propertyPath: healthSystem
       value: 
       objectReference: {fileID: 6638228750335921790}
+    - target: {fileID: 2394340384399233744, guid: 1d3c05dff2fe6274fb4fb10069fb6951,
+        type: 3}
+      propertyPath: zeroResourceZeroAlpha
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2394340384399233745, guid: 1d3c05dff2fe6274fb4fb10069fb6951,
         type: 3}
       propertyPath: m_Alpha
